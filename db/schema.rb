@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_011512) do
+ActiveRecord::Schema.define(version: 2019_07_09_162038) do
 
   create_table "crusts", force: :cascade do |t|
     t.string "dough"
+    t.decimal "price"
   end
 
   create_table "pizza_toppings", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_011512) do
 
   create_table "toppings", force: :cascade do |t|
     t.string "name"
+    t.decimal "price"
   end
 
 end
