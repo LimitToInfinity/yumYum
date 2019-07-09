@@ -1,0 +1,24 @@
+<h1><u><%= @pizza.name %> Pizza</u></h1>
+
+<% if @pizza.toppings.length > 0 %>
+    <h3>Toppings:</h3>
+    <% toppings_length = @pizza.toppings.length %>
+    <ul>
+    <% @pizza.toppings.each.with_index do |topping, index| %>
+        <% if index < (toppings_length - 1) %>
+            <li><span><%= topping.name %>, </span></li>
+        <% else %>
+            <li><span><%= topping.name %></span></li>
+        <% end %>
+    <% end %>
+    </ul>
+<% end %>
+
+<h3>Crust:</h3>
+<%= @pizza.crust.dough %>
+
+<h3>Sauce:</h3>
+<%= @pizza.sauce.flavor %> <br>
+
+<br><br>
+<button><%= link_to "All Pizzas", pizzas_path %></button>

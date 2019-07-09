@@ -1,0 +1,28 @@
+<% if @pizza.errors.any? %>
+    <% @pizza.errors.messages.each do |message| %>
+        <% if !message.last.first.include?("must exist") %>
+            <p>🧐 <%= message.last.first %> 🤨😂</p>
+        <% end %>
+    <% end %>
+<% end %>
+
+<%= form_for(@pizza) do |f| %>
+    
+    <h3>Name Your Pizza:</h3>
+    <%= f.text_field :name %>
+    
+    <h3>Select Toppings:</h3>
+    <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %>
+    
+    <h3>Select Crust:</h3>
+    <%= f.collection_select :crust_id, Crust.all, :id, :dough, prompt: true %>
+    
+    <h3>Select Sauce:</h3>
+    <%= f.collection_select :sauce_id, Sauce.all, :id, :flavor, prompt: true %>
+
+    <br><br><br>
+    <%= f.submit "Put Your Pizza in the Oven!" %>
+<% end %>
+
+<br><br><br><br>
+<button><%= link_to "All Pizzas", pizzas_path %></button>
