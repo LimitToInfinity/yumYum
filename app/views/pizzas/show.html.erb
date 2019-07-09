@@ -2,14 +2,9 @@
 
 <% if @pizza.toppings.length > 0 %>
     <h3>Toppings:</h3>
-    <% toppings_length = @pizza.toppings.length %>
     <ul>
     <% @pizza.toppings.each.with_index do |topping, index| %>
-        <% if index < (toppings_length - 1) %>
-            <li><span><%= topping.name %>, </span></li>
-        <% else %>
-            <li><span><%= topping.name %></span></li>
-        <% end %>
+        <li><%= topping.name %></li>
     <% end %>
     </ul>
 <% end %>
