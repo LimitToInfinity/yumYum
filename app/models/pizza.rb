@@ -284,6 +284,8 @@ class Pizza < ActiveRecord::Base
             end
         end
         pizzas_without_veggies_count
-    end    
+    end
+
+    
 
 end

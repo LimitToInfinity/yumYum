@@ -1,13 +1,14 @@
 <h2 style="color: green;">Analytics Fa Sho!</h2>
 
+<section class="pizza_class_methods">
 <h4>Average Pizza Price:</h4>
-<%= Pizza.avg_price %>
+<%= "$#{Pizza.avg_price}" %>
 <h4>Average Spent on Toppings:</h4>
-<%= Pizza.avg_toppings_price %>
+<%= "$#{Pizza.avg_toppings_price}" %>
 <h4>Average Spent on Proteins:</h4>
-<%= Pizza.avg_proteins_price %>
+<%= "$#{Pizza.avg_proteins_price}" %>
 <h4>Average Spent on Veggies:</h4>
-<%= Pizza.avg_veggies_price %>
+<%= "$#{Pizza.avg_veggies_price}" %>
 <h4>Most Popular Topping(s):</h4>
 <%= Pizza.most_popular_topping %>
 <h4>Most Popular Protein(s):</h4>
@@ -22,19 +23,23 @@
 <%= Pizza.number_non_protein_pizzas %>
 <h4>Number of Pizzas WithOUT Veggie-ness:</h4>
 <%= Pizza.number_non_veggie_pizzas %>
+</section>
 
-<p>______________________________________</p>
-
+<section id="all_pizzas_container_with_header">
 <h3 style="color: orange;">All the Za-ness</h3>
+<div id="all_pizzas_container">
 <% Pizza.all.each do |pizza| %>
+    <div class="all_pizzas" id=<%= "pizza_#{ pizza.id }" %>>
     <h4><%= pizza.name %></h4>
     <h5>Total Protein(s) Price:</h5>
-    <%= pizza.total_proteins_price %>
+    <%= "$#{pizza.total_proteins_price}" %>
     <h5>Total Veggie(s) Price:</h5>
-    <%= pizza.total_veggies_price %>
+    <%= "$#{pizza.total_veggies_price}" %>
     <h5>Total Topping(s) Price:</h5>
-    <%= pizza.total_toppings_price %>
+    <%= "$#{pizza.total_toppings_price}" %>
     <h5>Pizza Price:</h5>
-    <%= pizza.total_pizza_price %>
-    <p>___________________________________</p>
+    <%= "$#{pizza.total_pizza_price}" %>
+    </div>
 <% end %>
+</div>
+</section>
