@@ -1,7 +1,7 @@
 <% if @pizza.errors.any? %>
     <% @pizza.errors.messages.each do |message| %>
         <% if !message.last.first.include?("must exist") %>
-            <p>🧐 <%= message.last.first %> 🤨😂</p>
+            <p style="color: red;">🧐 <%= message.last.first %> 🤨😂</p>
         <% end %>
     <% end %>
 <% end %>
@@ -10,7 +10,15 @@
     
     <h3>Name Your Pizza:</h3>
     <%= f.text_field :name %>
-    
+
+    <h3>Choose Size:</h3>
+    <select name="pizza[size]" id="pizza_size">
+        <option value="">Please select</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+    </select>
+
     <h3>Select Toppings:</h3>
     <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %>
     
@@ -23,6 +31,3 @@
     <br><br><br>
     <%= f.submit "Put Your Pizza in the Oven!" %>
 <% end %>
-
-<br><br><br><br>
-<button><%= link_to "All Pizzas", pizzas_path %></button>

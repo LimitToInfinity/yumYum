@@ -1,4 +1,7 @@
-<h1><u><%= @pizza.name %> Pizza</u></h1>
+<h2><u><%= @pizza.name %> Pizza</u></h2>
+
+<h3>Size:</h3>
+<p><%= @pizza.size %></p>
 
 <% if @pizza.toppings.length > 0 %>
     <h3>Toppings:</h3>
@@ -14,6 +17,3 @@
 
 <h3>Sauce:</h3>
 <%= @pizza.sauce.flavor %> <br>
-
-<br><br>
-<button><%= link_to "All Pizzas", pizzas_path %></button>

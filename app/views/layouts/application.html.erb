@@ -10,6 +10,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <h1>Yum YUM!</h1>
+    <button><%= link_to "All Pizzas", pizzas_path %></button>
+    <button><%= link_to "Order New Pizza", new_pizza_path %></button>
+    <br> <%= yield %>
   </body>
 </html>

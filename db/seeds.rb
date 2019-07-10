@@ -18,7 +18,7 @@ Topping.create(name: "Black Olives", price: 0.75)
 Topping.create(name: "Mushrooms", price: 0.50)
 Topping.create(name: "Onions", price: 0.40)
 Topping.create(name: "Banana Peppers", price: 1.00)
-Topping.create(name: "Jalapeños Peppers", price: 0.75)
+Topping.create(name: "Jalapeño Peppers", price: 0.75)
 Topping.create(name: "Extra Cheese", price: 1.15)
 
 Crust.create(dough: "Regular", price: 6.00)
