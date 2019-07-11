@@ -11,9 +11,9 @@
 
   <body>
     <h1>Yum YUM!</h1>
-    <button><%= link_to "All Pizzas", pizzas_path %></button>
-    <button><%= link_to "Order New Pizza", new_pizza_path %></button>
-    <button><%= link_to "Analytics", "analytics" %></button>
+    <%= button_to "All Pizzas", pizzas_path, method: :get %>
+    <%= button_to "Order New Pizza", new_pizza_path, method: :get %>
+    <%= button_to "Analytics", "analytics", method: :get %>
     <br> <%= yield %>
   </body>
 </html>

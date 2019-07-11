@@ -3,8 +3,10 @@
 }
 
 .all_pizzas {
-    background-color: yellow;
-    border-radius: 30%;
+    background-color: rgb(228, 183, 60);
+    border-style: solid;
+    border-color: rgb(142, 12, 25);
+    border-radius: 50%;
     padding-top: 0.50em;
     padding-bottom: 0.50em;
 }
@@ -12,7 +14,7 @@
 #all_pizzas_container {
     width: 100%;
     display: grid;
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 10px;
     grid-gap: 10px;
     margin: 0 auto;
@@ -23,6 +25,16 @@ h4 {
     display: block;
     margin-block-start: 0.00em;
     margin-block-end: 0.00em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 0.80em;
+    margin-block-end: 0.80em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;

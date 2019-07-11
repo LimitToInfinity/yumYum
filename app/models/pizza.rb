@@ -286,6 +286,43 @@ class Pizza < ActiveRecord::Base
         pizzas_without_veggies_count
     end
 
-    
+    def self.are_you_extra_cheesy
+        @pizza_toppings_array = Pizza.all.map do |pizza| 
+            pizza.toppings.map do |topping|
+                topping.name
+            end    
+        end
+        extra_cheese_count = @pizza_toppings_array.flatten.count("Extra Cheese").to_f
+        ((extra_cheese_count / Pizza.all.length.to_f)*100).round.to_s + "%"
+    end
+
+    def self.are_you_spicy_topping
+        @pizza_toppings_array = Pizza.all.map do |pizza| 
+            pizza.toppings.map do |topping|
+                topping.name
+            end    
+        end
+
+        spicy_topping_count = @pizza_toppings_array.flatten.count("Jalapeño Peppers").to_f
+        ((spicy_topping_count / Pizza.all.length.to_f)*100).round.to_s + "%"
+    end
+
+    def self.are_you_regular_crust
+        @pizza_crusts_array = Pizza.all.map do |pizza| 
+            pizza.crust.dough
+        end
+
+        regular_crust_count = @pizza_crusts_array.count("Regular").to_f
+        ((regular_crust_count / Pizza.all.length.to_f)*100).round.to_s + "%"
+    end
+
+    def self.are_you_regular_tomato_sauce
+        @pizza_sauces_array = Pizza.all.map do |pizza| 
+            pizza.sauce.flavor
+        end
+
+        tomato_sauce_count = @pizza_sauces_array.count("Tomato").to_f
+        ((tomato_sauce_count / Pizza.all.length.to_f)*100).round.to_s + "%"
+    end
 
 end

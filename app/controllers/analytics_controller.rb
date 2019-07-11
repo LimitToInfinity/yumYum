@@ -1,6 +1,6 @@
 class AnalyticsController < ApplicationController
 
-    def show
+    def index
         render "analytics/index"
     end
 
