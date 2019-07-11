@@ -4,6 +4,8 @@ class Pizza < ActiveRecord::Base
     belongs_to :crust
     belongs_to :sauce
 
+    belongs_to :user
+
     accepts_nested_attributes_for :toppings
     accepts_nested_attributes_for :crust
     accepts_nested_attributes_for :sauce

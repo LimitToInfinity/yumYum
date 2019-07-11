@@ -1,28 +1,58 @@
 <h2 style="color: green;">Analytics Fa Sho!</h2>
 
 <section class="pizza_class_methods">
-<h4>Average Pizza Price:</h4>
-<%= "$#{Pizza.avg_price}" %>
-<h4>Average Spent on Toppings:</h4>
-<%= "$#{Pizza.avg_toppings_price}" %>
-<h4>Average Spent on Proteins:</h4>
-<%= "$#{Pizza.avg_proteins_price}" %>
-<h4>Average Spent on Veggies:</h4>
-<%= "$#{Pizza.avg_veggies_price}" %>
-<h4>Most Popular Topping(s):</h4>
-<%= Pizza.most_popular_topping %>
-<h4>Most Popular Protein(s):</h4>
-<%= Pizza.most_popular_protein %>
-<h4>Most Popular Veggie(s):</h4>
-<%= Pizza.most_popular_veggie %>
-<h4>Most Popular Sauce(s):</h4>
-<%= Pizza.most_popular_sauce %>
-<h4>Most Popular Crust(s):</h4>
-<%= Pizza.most_popular_crust %>
-<h4>Number of Pizzas WithOUT Proteinness:</h4>
-<%= Pizza.number_non_protein_pizzas %>
-<h4>Number of Pizzas WithOUT Veggie-ness:</h4>
-<%= Pizza.number_non_veggie_pizzas %>
+<table class="class_methods_table" style="width:100%">
+    <thead>
+        <tr>
+            <th><h4>Average Pizza Price:</h4></th>
+            <th><h4>Average Spent on Toppings:</h4></th>
+            <th><h4>Average Spent on Proteins:</h4></th>
+            <th><h4>Average Spent on Veggies:</h4></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= "$#{Pizza.avg_price}" %></td>
+            <td><%= "$#{Pizza.avg_toppings_price}" %></td>
+            <td><%= "$#{Pizza.avg_proteins_price}" %></td>
+            <td><%= "$#{Pizza.avg_veggies_price}" %></td>
+        </tr>
+    </tbody>
+</table>
+<table class="class_methods_table" style="width:100%">
+    <thead>
+        <tr>
+            <th><h4>Most Popular Topping(s):</h4></th>
+            <th><h4>Most Popular Protein(s):</h4></th>
+            <th><h4>Most Popular Veggie(s):</h4></th>
+            <th><h4>Most Popular Sauce(s):</h4></th>
+            <th><h4>Most Popular Crust(s):</h4></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= Pizza.most_popular_topping %></td>
+            <td><%= Pizza.most_popular_protein %></td>
+            <td><%= Pizza.most_popular_veggie %></td>
+            <td><%= Pizza.most_popular_sauce %></td>
+            <td><%= Pizza.most_popular_crust %></td>
+        </tr>
+    </tbody>
+</table>
+<table class="class_methods_table" style="width:100%">
+    <thead>
+        <tr>
+            <th><h4>Number of Pizzas WithOUT Proteinness:</h4></th>
+            <th><h4>Number of Pizzas WithOUT Veggie-ness:</h4></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= Pizza.number_non_protein_pizzas %></td>
+            <td><%= Pizza.number_non_veggie_pizzas %></td>
+        </tr>
+    </tbody>
+</table>
 </section>
 
 <section id="all_pizzas_container_with_header">

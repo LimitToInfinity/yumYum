@@ -1,5 +1,19 @@
-<h2><u>All Pizzas</u></h2>
-
-<% @pizzas.each do |pizza| %>
-    <p><%= link_to pizza.name, pizza %></p>
+<% if @user && @user.id %>
+    <h2><u>Your Pizzas, <%= @user.name %>!</u></h2>
 <% end %>
+
+<div class="columns">
+    <% if @user && @user.id %>
+        
+        <% @user.pizzas.each do |pizza| %>
+            <p><%= link_to pizza.name, pizza %></p>
+        <% end %>
+    <% end %>
+</div>
+
+<h2><u>All Pizzas</u></h2>
+<div class="columns">
+    <% @pizzas.each do |pizza| %>
+        <p><%= link_to pizza.name, pizza %></p>
+    <% end %>
+</div>

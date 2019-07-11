@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_011512) do
+ActiveRecord::Schema.define(version: 2019_07_11_134242) do
 
   create_table "crusts", force: :cascade do |t|
     t.string "dough"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2019_07_09_011512) do
     t.string "size"
     t.integer "crust_id"
     t.integer "sauce_id"
+    t.integer "user_id"
     t.index ["crust_id"], name: "index_pizzas_on_crust_id"
     t.index ["sauce_id"], name: "index_pizzas_on_sauce_id"
+    t.index ["user_id"], name: "index_pizzas_on_user_id"
   end
 
   create_table "sauces", force: :cascade do |t|
@@ -40,6 +42,12 @@ ActiveRecord::Schema.define(version: 2019_07_09_011512) do
   create_table "toppings", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password_digest"
   end
 
 end

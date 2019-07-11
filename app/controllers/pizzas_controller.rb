@@ -42,6 +42,7 @@ class PizzasController < ApplicationController
     private
     def pizza_params
         params.require(:pizza).permit(:name, :size,
+        :user_id,
         :crust_id,
         :sauce_id,
         topping_ids: [])

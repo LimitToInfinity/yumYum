@@ -28,6 +28,8 @@
     <h3>Select Sauce:</h3>
     <%= f.collection_select :sauce_id, Sauce.all, :id, :flavor, prompt: true %>
 
+    <%= f.hidden_field :user_id, value: @user.id %>
+
     <br><br><br>
     <%= f.submit "Put Your Pizza in the Oven!" %>
 <% end %>
