@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+ 
+ h1 {
+    display: grid;
+    color: hsl(155 155 0);
+    text-align: center;
+
+} 
+
+h3 {
+    text-align: center;
+    color: salmon;
+ }
+
+ body {
+     text-align: center;
+ }
+
+ .btn {
+    align-content: center;
+    color: salmon;
+ }
+
+ html {
+     background: #00ffaa;
+ }
+
+ img {
+    width: 75%;
+    border-radius: 50%;
+ }
+
+ .icons {
+    color: salmon;
+    font-size: 20px;
+ }
