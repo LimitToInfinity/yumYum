@@ -1,7 +1,7 @@
 <% if @pizza.errors.any? %>
     <% @pizza.errors.messages.each do |message| %>
         <% if !message.last.first.include?("must exist") %>
-            <p style="color: red;">🧐 <%= message.last.first %> 🤨😂</p>
+            <p class="error-messages">🧐 <%= message.last.first %> 🤨😂</p>
         <% end %>
     <% end %>
 <% end %>
