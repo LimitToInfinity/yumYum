@@ -1,24 +1,19 @@
-# README
+Overview:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We have built a very special app for anyone who wants to create their own special pizza.
 
-Things you may want to cover:
+Instructions:
 
-* Ruby version
+For this app, you can order, create a pizza, and create an account and save the pizzas you have created. First, create an account with a unique username, login, then start creating your delicious pizza. Choose from a variety of crusts, sauces, sizes, and wonderful toppings, both veggie and protein. Afterwards, you can logout then login at a different time to create more or choose a pizza a you’ve created.
 
-* System dependencies
+Requirements:
 
-* Configuration
+A desire for a wonder pizza.
 
-* Database creation
+Deployment:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Download.
+In your Terminal type: rails db:create && rails db:migrate && rails db:seed
+Type Rails S into your terminal.
+Type http://localhost:3000/pizzas into your browser.
+Enjoy!
