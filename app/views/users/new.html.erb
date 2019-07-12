@@ -2,7 +2,7 @@
 
 <% if @user.errors.any? %>
     <% @user.errors.messages.each do |message| %>
-        <p style="color: red;">🧐 <%= message.last.first %> 🤨😂</p>
+        <p class="error-messages">🧐 <%= message.last.first %> 🤨😂</p>
     <% end %>
 <% end %>
 
