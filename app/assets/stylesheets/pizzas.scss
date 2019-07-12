@@ -7,3 +7,25 @@
     margin: 0 auto;
     text-align: center;
 }
+
+.pizza-attributes{
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.pizza-toppings{
+    color: white;
+    text-shadow: 0 0 10px black;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.toppings-list {
+    align-content: center;
+}
+
+.columns a {
+    color: white;
+}
+

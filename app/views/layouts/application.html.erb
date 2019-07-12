@@ -8,18 +8,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/2ebbc8365f.js"></script>
+  
     </head>
 
   <body>
-    <h1>Yum YUM!</h1>
+
+    <h1 id="logo">Pizza Gut</h1>
     <nav class="btn">
+        <% if @user && @user.id %>
+          <%= link_to new_pizza_path do %>
+            <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;" ><%= button_to "Order New Pizza", new_pizza_path, method: :get %></i>
+          <% end %>
+        <% end %>
       <%= link_to pizzas_path do %>
         <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;"><%= button_to "Check All Pizzas", pizzas_path, method: :get %></i>
       <% end %>
       <% if @user && @user.id %>
-        <%= link_to new_pizza_path do %>
-        <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;" ><%= button_to "Order New Pizza", new_pizza_path, method: :get %></i>
-        <% end %>
         <%= link_to "/analytics" do %>
         <i class="fas fa-chart-pie fa-2x" style="color: salmon;"><%= button_to "Analytics", "/analytics", method: :get %></i>
         <% end %>
@@ -36,5 +40,7 @@
       <% end %>
     </nav>
     <br> <%= yield %>
+
+    
   </body>
 </html>

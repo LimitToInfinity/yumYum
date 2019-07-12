@@ -1,75 +1,80 @@
-<h2 style="color: green;">Analytics Fa Sho!</h2>
+<section class = "analytics-class-methods">
+<h2>Analytics Fa Sho!</h2>
 
-<section class="pizza_class_methods">
-<table class="class_methods_table" style="width:100%">
-    <thead>
-        <tr>
-            <th><h4>Average Pizza Price:</h4></th>
-            <th><h4>Average Spent on Toppings:</h4></th>
-            <th><h4>Average Spent on Proteins:</h4></th>
-            <th><h4>Average Spent on Veggies:</h4></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%= "$#{Pizza.avg_price}" %></td>
-            <td><%= "$#{Pizza.avg_toppings_price}" %></td>
-            <td><%= "$#{Pizza.avg_proteins_price}" %></td>
-            <td><%= "$#{Pizza.avg_veggies_price}" %></td>
-        </tr>
-    </tbody>
-</table>
-<table class="class_methods_table" style="width:100%">
-    <thead>
-        <tr>
-            <th><h4>Most Popular Topping(s):</h4></th>
-            <th><h4>Most Popular Protein(s):</h4></th>
-            <th><h4>Most Popular Veggie(s):</h4></th>
-            <th><h4>Most Popular Sauce(s):</h4></th>
-            <th><h4>Most Popular Crust(s):</h4></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%= Pizza.most_popular_topping %></td>
-            <td><%= Pizza.most_popular_protein %></td>
-            <td><%= Pizza.most_popular_veggie %></td>
-            <td><%= Pizza.most_popular_sauce %></td>
-            <td><%= Pizza.most_popular_crust %></td>
-        </tr>
-    </tbody>
-</table>
-<table class="class_methods_table" style="width:100%">
-    <thead>
-        <tr>
-            <th><h4>Number of Pizzas WithOUT Proteinness:</h4></th>
-            <th><h4>Number of Pizzas WithOUT Veggie-ness:</h4></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%= Pizza.number_non_protein_pizzas %></td>
-            <td><%= Pizza.number_non_veggie_pizzas %></td>
-        </tr>
-    </tbody>
-</table>
+<% if Pizza.all.length > 0 %>
+    <section class="pizza_class_methods">
+    <table class="class_methods_table" style="width:100%">
+        <thead>
+            <tr>
+                <th><h4>Average Pizza Price:</h4></th>
+                <th><h4>Average Spent on Toppings:</h4></th>
+                <th><h4>Average Spent on Proteins:</h4></th>
+                <th><h4>Average Spent on Veggies:</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= "$#{Pizza.avg_price}" %></td>
+                <td><%= "$#{Pizza.avg_toppings_price}" %></td>
+                <td><%= "$#{Pizza.avg_proteins_price}" %></td>
+                <td><%= "$#{Pizza.avg_veggies_price}" %></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="class_methods_table" style="width:100%">
+        <thead>
+            <tr>
+                <th><h4>Most Popular Topping(s):</h4></th>
+                <th><h4>Most Popular Protein(s):</h4></th>
+                <th><h4>Most Popular Veggie(s):</h4></th>
+                <th><h4>Most Popular Sauce(s):</h4></th>
+                <th><h4>Most Popular Crust(s):</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= Pizza.most_popular_topping %></td>
+                <td><%= Pizza.most_popular_protein %></td>
+                <td><%= Pizza.most_popular_veggie %></td>
+                <td><%= Pizza.most_popular_sauce %></td>
+                <td><%= Pizza.most_popular_crust %></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="class_methods_table" style="width:100%">
+        <thead>
+            <tr>
+                <th><h4>Number of Pizzas WithOUT Proteinness:</h4></th>
+                <th><h4>Number of Pizzas WithOUT Veggie-ness:</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= Pizza.number_non_protein_pizzas %></td>
+                <td><%= Pizza.number_non_veggie_pizzas %></td>
+            </tr>
+        </tbody>
+    </table>
+    </section>
 </section>
-
-<section id="all_pizzas_container_with_header">
-<h3 style="color: orange;">All the Za-ness</h3>
-<div id="all_pizzas_container">
-<% Pizza.all.each do |pizza| %>
-    <div class="all_pizzas" id=<%= "pizza_#{ pizza.id }" %>>
-    <h4><%= pizza.name %></h4>
-    <h5>Total Protein(s) Price:</h5>
-    <%= "$#{pizza.total_proteins_price}" %>
-    <h5>Total Veggie(s) Price:</h5>
-    <%= "$#{pizza.total_veggies_price}" %>
-    <h5>Total Topping(s) Price:</h5>
-    <%= "$#{pizza.total_toppings_price}" %>
-    <h5>Pizza Price:</h5>
-    <%= "$#{pizza.total_pizza_price}" %>
+    <section id="all_pizzas_container_with_header">
+    <h3 style="color: orange;">All the Za-ness</h3>
+    <div id="all_pizzas_container">
+    <% Pizza.all.each do |pizza| %>
+        <div class="all_pizzas" id=<%= "pizza_#{ pizza.id }" %>>
+        <h4><%= pizza.name %></h4>
+        <h5>Total Protein(s) Price:</h5>
+        <%= "$#{pizza.total_proteins_price}" %>
+        <h5>Total Veggie(s) Price:</h5>
+        <%= "$#{pizza.total_veggies_price}" %>
+        <h5>Total Topping(s) Price:</h5>
+        <%= "$#{pizza.total_toppings_price}" %>
+        <h5>Pizza Price:</h5>
+        <%= "$#{pizza.total_pizza_price}" %>
+        </div>
+    <% end %>
     </div>
+    </section>
+<% else %>
+    <h2>Create New Pizza!</h2>
 <% end %>
-</div>
-</section>
