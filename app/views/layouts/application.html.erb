@@ -25,6 +25,9 @@
         <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;"><%= button_to "Check All Pizzas", pizzas_path, method: :get %></i>
       <% end %>
       <% if @user && @user.id %>
+        <%= link_to "/my_analytics" do %>
+          <i class="fas fa-chart-pie fa-2x" style="color: salmon;"><%= button_to "My Analytics", "/my_analytics", method: :get %></i>
+        <% end %>
         <%= link_to "/analytics" do %>
           <i class="fas fa-chart-pie fa-2x" style="color: salmon;"><%= button_to "Analytics", "/analytics", method: :get %></i>
         <% end %>

@@ -45,3 +45,10 @@
 .pizza_index_headers {
     font-size: 250%;
 }
+
+#no_pizzas_header {
+    color: white;
+    text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
+    display: flex;
+    justify-items: center;
+}

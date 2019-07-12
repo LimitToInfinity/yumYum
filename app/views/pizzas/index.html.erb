@@ -4,12 +4,21 @@
 
 <div class="columns">
     <% if @user && @user.id %>
-        
-        <% @user.pizzas.each do |pizza| %>
-            <p class="pizza-links"><%= link_to pizza.name, pizza %></p>
+        <% if @user.pizzas.length > 0 %>
+            <% @user.pizzas.each do |pizza| %>
+                <p class="pizza-links"><%= link_to pizza.name, pizza %></p>
+            <% end %>
         <% end %>
     <% end %>
 </div>
+
+<% if @user && @user.id %>
+    <% if @user.pizzas.length < 1 %>
+        <%= link_to new_pizza_path do %>
+            <%= button_to "Order a Pizza!", new_pizza_path, method: :get %></i>
+        <% end %>
+    <% end %>
+<% end %>
 
 <h2 class="pizza_index_headers"><u>All Pizzas</u></h2>
 <div class="columns">

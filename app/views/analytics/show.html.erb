@@ -1,0 +1,100 @@
+<section class = "analytics-class-methods">
+<h2 id="analytics_header">My Analytics Fa Sho!</h2>
+
+<% if @user.pizzas.all.length > 0 %>
+    <section class="pizza_class_methods">
+        <table class="class_methods_table" id="cmt1" style="width:100%">
+            <thead>
+                <tr>
+                    <th><h4>My Average Pizza Price:</h4></th>
+                    <th><h4>My Average Spent on Toppings:</h4></th>
+                    <th><h4>My Average Spent on Proteins:</h4></th>
+                    <th><h4>My Average Spent on Veggies:</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= "$#{@user.pizzas.avg_price}" %></td>
+                    <td><%= "$#{@user.pizzas.avg_toppings_price}" %></td>
+                    <td><%= "$#{@user.pizzas.avg_proteins_price}" %></td>
+                    <td><%= "$#{@user.pizzas.avg_veggies_price}" %></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="class_methods_table" id="cmt2" style="width:100%">
+            <thead>
+                <tr>
+                    <th><h4>My Most Popular Topping(s):</h4></th>
+                    <th><h4>My Most Popular Protein(s):</h4></th>
+                    <th><h4>My Most Popular Veggie(s):</h4></th>
+                    <th><h4>My Most Popular Sauce(s):</h4></th>
+                    <th><h4>My Most Popular Crust(s):</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @user.pizzas.most_popular_topping %></td>
+                    <td><%= @user.pizzas.most_popular_protein %></td>
+                    <td><%= @user.pizzas.most_popular_veggie %></td>
+                    <td><%= @user.pizzas.most_popular_sauce %></td>
+                    <td><%= @user.pizzas.most_popular_crust %></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="class_methods_table" id="cmt3" style="width:100%">
+            <thead>
+                <tr>
+                    <th><h4>My Number of Pizzas WithOUT Proteinness:</h4></th>
+                    <th><h4>My Number of Pizzas WithOUT Veggie-ness:</h4></th>
+                    <th><h4>My Percent with Extra Cheese:</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @user.pizzas.number_non_protein_pizzas %></td>
+                    <td><%= @user.pizzas.number_non_veggie_pizzas %></td>
+                    <td><%= @user.pizzas.are_you_extra_cheesy %></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="class_methods_table" id="cmt4" style="width:100%">
+            <thead>
+                <tr>
+                    <th><h4>My Percent Spicy:</h4></th>
+                    <th><h4>My Percent Regular Crust:</h4></th>
+                    <th><h4>My Percent Regular Tomato Sauce:</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @user.pizzas.are_you_spicy_topping %></td>
+                    <td><%= @user.pizzas.are_you_regular_crust %></td>
+                    <td><%= @user.pizzas.are_you_regular_tomato_sauce %></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
+    <section id="all_pizzas_container_with_header">
+    <h3 id="analytics_instances_header">All MY Za-ness</h3>
+    <div id="all_pizzas_container">
+    <% @user.pizzas.each do |pizza| %>
+        <div class="all_pizzas" id=<%= "pizza_#{ pizza.id }" %>>
+        <h4><%= link_to pizza.name, pizza_path(pizza) %></h4>
+        <h5>Total Protein(s) Price:</h5>
+        <%= "$#{pizza.total_proteins_price}" %>
+        <h5>Total Veggie(s) Price:</h5>
+        <%= "$#{pizza.total_veggies_price}" %>
+        <h5>Total Topping(s) Price:</h5>
+        <%= "$#{pizza.total_toppings_price}" %>
+        <h5>Pizza Price:</h5>
+        <%= "$#{pizza.total_pizza_price}" %>
+        </div>
+    <% end %>
+    </div>
+    </section>
+<% else %>
+    <%= link_to new_pizza_path do %>
+        <%= button_to "Order a Pizza!", new_pizza_path, method: :get %></i>
+    <% end %>
+<% end %>
