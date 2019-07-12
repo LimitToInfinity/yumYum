@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.pizza-attributes{
+.pizza-attributes {
     color: white;
     text-shadow: 0 0 10px black;
 }
@@ -29,3 +29,19 @@
     color: white;
 }
 
+.pizza-links {
+    text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
+    transition: all 0.1s;
+    font-size: 130%;
+    cursor: pointer;
+}
+
+.pizza-links:hover {
+    text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
+    color: hsl(0, 50%, 50%);
+    transform: scale(1.2);
+}
+
+.pizza_index_headers {
+    font-size: 250%;
+}

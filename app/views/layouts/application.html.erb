@@ -13,13 +13,14 @@
 
   <body>
 
+  <nav class="nav_bar">
     <h1 id="logo">Pizza Gut</h1>
-    <nav class="btn">
-        <% if @user && @user.id %>
-          <%= link_to new_pizza_path do %>
-            <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;" ><%= button_to "Order New Pizza", new_pizza_path, method: :get %></i>
-          <% end %>
+    <div class="nav_buttons">
+      <% if @user && @user.id %>
+        <%= link_to new_pizza_path do %>
+          <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;" ><%= button_to "Order New Pizza", new_pizza_path, method: :get %></i>
         <% end %>
+      <% end %>
       <%= link_to pizzas_path do %>
         <i class="fas fa-pizza-slice fa-2x" alt="pizza icon" style="color: salmon;"><%= button_to "Check All Pizzas", pizzas_path, method: :get %></i>
       <% end %>
@@ -38,7 +39,8 @@
         <i class="fas fa-sign-in-alt fa-2x" style="color: salmon;"><%= button_to "Login", login_path, method: :get %></i>
         <% end %>
       <% end %>
-    </nav>
+    </div>
+  </nav>
     <br> <%= yield %>
 
     

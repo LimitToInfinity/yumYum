@@ -21,9 +21,15 @@
 
     <h3>Select Toppings:</h3>
     <div id= "checkboxes">
-    <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %>
+    <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name do |b| %>
+        <%= b.label do %>
+            <%= b.check_box %>
+            <%= b.label %>
+            <span>$<%= "%.2f" % b.object.price.to_f %></span>
+        <% end %>
+    <% end %>
     </div>
-    
+        
     
     <h3>Select Crust:</h3>
     <%= f.collection_select :crust_id, Crust.all, :id, :dough, prompt: true %>
@@ -38,5 +44,6 @@
     <br><br><br>
     <section class="btn">
     <%= f.submit "Put Your Pizza in the Oven!" %>
+    <br><br><br><br><br><br><br><br><br>
     </section>
 <% end %>

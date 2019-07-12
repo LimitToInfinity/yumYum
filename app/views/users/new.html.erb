@@ -1,4 +1,4 @@
-<h2>Signup!</h2>
+<h2 id="login_and_signup_header">Signup!</h2>
 
 <% if @user.errors.any? %>
     <% @user.errors.messages.each do |message| %>
@@ -6,15 +6,17 @@
     <% end %>
 <% end %>
 
-<%= form_for(@user) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %> <br><br>
-    
-    <%= f.label :username %>
-    <%= f.text_field :username %> <br><br>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br><br>
-    
-    <%= f.submit "Create your Za-ly account" %>
-<% end %>
+<div class="login_and_signup_forms">
+    <%= form_for(@user) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %> <br><br>
+        
+        <%= f.label :username %>
+        <%= f.text_field :username %> <br><br>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %> <br><br>
+        
+        <%= f.submit "Create your Za-ly account" %>
+    <% end %>
+</div>

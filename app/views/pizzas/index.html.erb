@@ -1,5 +1,5 @@
 <% if @user && @user.id %>
-    <h2><u>Your Pizzas, <%= @user.name %>!</u></h2>
+    <h2 class="pizza_index_headers"><u>Your Pizzas, <%= @user.name %>!</u></h2>
 <% end %>
 
 <div class="columns">
@@ -11,7 +11,7 @@
     <% end %>
 </div>
 
-<h2><u>All Pizzas</u></h2>
+<h2 class="pizza_index_headers"><u>All Pizzas</u></h2>
 <div class="columns">
     <% @pizzas.each do |pizza| %>
         <p class="pizza-links"><%= link_to pizza.name, pizza %></p>

@@ -1,15 +1,17 @@
-<h2>Login</h2>
+<h2 id="login_and_signup_header">Login</h2>
 
 <% if @error %>
     <p style="color: red;">🧐 <%= @error %> 🤨😂</p>
 <% end %>
 
-<%= form_for(@user, url: { controller: "sessions", action: "create" }) do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %> <br><br>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br><br>
+<div class="login_and_signup_forms">
+    <%= form_for(@user, url: { controller: "sessions", action: "create" }) do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %> <br><br>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %> <br><br>
 
-    <%= f.submit "Login" %>
-<% end %>
+        <%= f.submit "Login" %>
+    <% end %>
+</div>
