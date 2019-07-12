@@ -15,6 +15,8 @@ A desire for a wonder pizza.
 
 Deployment:
 
-1) Type Rails S into your terminal.
-2) Type http://localhost:3000/pizzas into your browser.
-3) Enjoy!
+1) Download.
+2) In your Terminal type: rails db:create && rails db:migrate && rails db:seed
+3) Type Rails S into your terminal.
+4) Type http://localhost:3000/pizzas into your browser.
+5) Enjoy!
