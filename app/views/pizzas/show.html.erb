@@ -1,3 +1,7 @@
+<% if @user && @user.id %>
+    <%= button_to "Order Yo Za!", "/order", method: :get, params: { pizza_id: @pizza.id }  %>
+<% end %>
+
 <h2><u><%= @pizza.name %> Pizza</u></h2>
 
 <h3>Size:</h3>
@@ -19,3 +23,5 @@
 
 <h3>Sauce:</h3>
 <p class="pizza-attributes"><%= @pizza.sauce.flavor %></p> <br>
+
+<br><br><br><br><br>

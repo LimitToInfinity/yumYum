@@ -1,0 +1,23 @@
+<%  @pizza = Pizza.find(params[:pizza_id].to_i) %>
+
+<h3 class="pizza_order_headers"><u>Yo Pizza <span id="pizza_order_name"><%= @pizza.name %></span> Be Ready in Never!</u></h3>
+
+<h3 class="pizza_order_headers">Size:</h3>
+<p class="pizza-attributes"><%= @pizza.size %></p>
+
+<% if @pizza.toppings.length > 0 %>
+    <h3 class="pizza_order_headers">Toppings:</h3>
+    <div class="toppings-list">
+        <ul class="unordered-list">
+        <% @pizza.toppings.each.with_index do |topping, index| %>
+            <li class="pizza-toppings"><%= topping.name %></li>
+        <% end %>
+        </ul>
+<% end %>
+    </div>
+
+<h3 class="pizza_order_headers">Crust:</h3>
+<p class="pizza-attributes"><%= @pizza.crust.dough %></p>
+
+<h3 class="pizza_order_headers">Sauce:</h3>
+<p class="pizza-attributes"><%= @pizza.sauce.flavor %></p> <br>
