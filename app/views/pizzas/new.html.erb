@@ -32,7 +32,7 @@
         
     
     <h3>Select Crust:</h3>
-    <%= f.collection_select :crust_id, Crust.all, :id, :dough, prompt: true %>
+    <%= f.collection_select :crust_id, Crust.all, :id, :name_with_price, prompt: true %>
     
     <h3>Select Sauce:</h3>
     <%= f.collection_select :sauce_id, Sauce.all, :id, :flavor, prompt: true %>

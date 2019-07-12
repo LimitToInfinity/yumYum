@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             redirect_to pizzas_path        
         else
             @user = User.new
-            @error = "You done screwed the pooch! 🏴‍☠️"
+            @error = "You done screwed the pooch!"
             render "login/login"
         end
     end
